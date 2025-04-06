@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dying Light UI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Прелоадер -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-logo">
+            <span class="dying">DYING</span>
+            <span class="light">LIGHT</span>
+        </div>
+        <div class="preloader-bar">
+            <div class="preloader-progress" id="preloaderProgress"></div>
+        </div>
+        <div class="preloader-hint" id="preloaderHint">Инициализация системы...</div>
+    </div>
+
+    <!-- Основной контент -->
+    <div class="dying-light-container" id="mainContent">
+        <!-- Кнопка -->
+        <section class="ui-section">
+            <h2>Кнопка</h2>
+            <button class="dying-button">Войти в карантинную зону</button>
+            <button class="dying-button secondary">Отмена</button>
+        </section>
+
+        <!-- Радиокнопка -->
+        <section class="ui-section">
+            <h2>Радиокнопка</h2>
+            <div class="radio-group">
+                <label class="dying-radio">
+                    <input type="radio" name="difficulty" checked>
+                    <span class="radio-custom"></span>
+                    Нормальная сложность
+                </label>
+                <label class="dying-radio">
+                    <input type="radio" name="difficulty">
+                    <span class="radio-custom"></span>
+                    Хардкор
+                </label>
+            </div>
+        </section>
+
+        <!-- Чекбокс -->
+        <section class="ui-section">
+            <h2>Чекбокс</h2>
+            <label class="dying-checkbox">
+                <input type="checkbox" checked>
+                <span class="checkbox-custom"></span>
+                Включить кровь
+            </label>
+            <label class="dying-checkbox">
+                <input type="checkbox">
+                <span class="checkbox-custom"></span>
+                Режим выживания
+            </label>
+        </section>
+
+        <!-- Выпадающий список -->
+        <section class="ui-section">
+            <h2>Выпадающий список</h2>
+            <select class="dying-select">
+                <option>Выберите оружие</option>
+                <option>Модифицированная бита</option>
+                <option>Лук</option>
+                <option>Карабин</option>
+                <option>Коктейль Молотова</option>
+            </select>
+        </section>
+
+        <!-- Слайдер -->
+        <section class="ui-section">
+            <h2>Слайдер</h2>
+            <div class="dying-slider-container">
+                <label>Громкость звуков окружения</label>
+                <input type="range" min="0" max="100" value="70" class="dying-slider">
+            </div>
+        </section>
+
+        <!-- Контент блок -->
+        <section class="ui-section">
+            <h2>Контент блок</h2>
+            <div class="dying-content-block">
+                <h3>Последнее предупреждение</h3>
+                <p>Карантинная зона Харрана находится под строгим контролем. Любые попытки покинуть зону будут пресекаться вооруженными силами. Оставайтесь в безопасных зонах после наступления темноты.</p>
+            </div>
+        </section>
+
+        <!-- Popup -->
+        <section class="ui-section">
+            <h2>Popup</h2>
+            <button class="dying-button" id="showPopupBtn">Показать Popup</button>
+            <div class="dying-popup" id="warningPopup">
+                <div class="popup-content">
+                    <span class="close-popup">&times;</span>
+                    <h3>Внимание!</h3>
+                    <p>Ночь приближается. Начинается превращение.</p>
+                    <button class="dying-button">Понимаю</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Диалог -->
+        <section class="ui-section">
+            <h2>Диалог</h2>
+            <div class="dying-dialog">
+                <div class="dialog-header">
+                    <h3>Доктор Камден</h3>
+                    <div class="dialog-health">Здоровье: 65%</div>
+                </div>
+                <div class="dialog-message">
+                    <p>Крайн! Ты должен доставить этот антиген в башню. Это наш последний шанс остановить вирус!</p>
+                </div>
+                <div class="dialog-options">
+                    <button class="dying-button small">Принять задание</button>
+                    <button class="dying-button small secondary">Отказаться</button>
+                    <button class="dying-button small">Спросить о вирусе</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Галерея -->
+        <section class="ui-section">
+            <h2>Галерея</h2>
+            <div class="dying-gallery">
+                <h3>Моменты из игры</h3>
+                <div class="gallery-container">
+                    <div class="gallery-item active" style="background-image: url('https://images.ctfassets.net/rporu91m20dc/6W0h64K3g0sCkQe8u2cYqS/5d5e0d4b3d4a6a1e6f0e3b3d4a6a1e6/dying-light-2.jpg')"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                    <div class="gallery-item" style="background-image: url('https://images.unsplash.com/photo-1633613286848-e6f43bbafb8d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80')"></div>
+                </div>
+                <div class="gallery-nav">
+                    <button class="gallery-prev">&lt;</button>
+                    <div class="gallery-dots">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <button class="gallery-next">&gt;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Подсказка -->
+        <section class="ui-section">
+            <h2>Подсказка</h2>
+            <div class="dying-tooltip">
+                Наведите для подсказки
+                <span class="tooltip-text">Ночью мутанты становятся агрессивнее. Оставайтесь на свету!</span>
+            </div>
+        </section>
+
+        <!-- Стрелки навигации -->
+        <section class="ui-section">
+            <h2>Стрелки навигации</h2>
+            <div class="dying-arrows">
+                <button class="arrow up">↑</button>
+                <div>
+                    <button class="arrow left">←</button>
+                    <button class="arrow right">→</button>
+                </div>
+                <button class="arrow down">↓</button>
+            </div>
+        </section>
+
+        <!-- Нумерация страниц -->
+        <section class="ui-section">
+            <h2>Нумерация страниц</h2>
+            <div class="dying-pagination">
+                <button class="page-nav">&lt;&lt;</button>
+                <button class="page-nav">&lt;</button>
+                <button class="page active">1</button>
+                <button class="page">2</button>
+                <button class="page">3</button>
+                <span class="page-dots">...</span>
+                <button class="page">8</button>
+                <button class="page-nav">&gt;</button>
+                <button class="page-nav">&gt;&gt;</button>
+            </div>
+        </section>
+
+        <!-- Маркеры списков -->
+        <section class="ui-section">
+            <h2>Маркеры списков</h2>
+            <ul class="dying-list">
+                <li>Антиген</li>
+                <li>Аптечка</li>
+                <li>Электронные компоненты</li>
+                <li>Металлолом</li>
+            </ul>
+        </section>
+
+        <!-- Поисковая строка -->
+        <section class="ui-section">
+            <h2>Поисковая строка</h2>
+            <div class="dying-search">
+                <input type="text" placeholder="Поиск безопасных зон...">
+                <button class="search-button">Поиск</button>
+            </div>
+        </section>
+
+        <!-- Видео плеер -->
+        <section class="ui-section">
+            <h2>Видео плеер</h2>
+            <div class="dying-video-player">
+                <div class="video-container">
+                    <video id="gameTrailer" poster="https://images.ctfassets.net/rporu91m20dc/6W0h64K3g0sCkQe8u2cYqS/5d5e0d4b3d4a6a1e6f0e3b3d4a6a1e6/dying-light-2.jpg">
+                        <source src="trailer.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-controls">
+                        <button class="video-play">▶</button>
+                        <div class="video-progress">
+                            <div class="progress-bar"></div>
+                        </div>
+                        <div class="video-time">0:00 / 2:35</div>
+                        <button class="video-fullscreen">⛶</button>
+                        <button class="video-volume">🔊</button>
+                        <input type="range" min="0" max="100" value="80" class="volume-slider">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Аудио плеер -->
+        <section class="ui-section">
+            <h2>Аудио плеер</h2>
+            <div class="dying-audio-player">
+                <div class="audio-info">
+                    <div class="audio-cover"></div>
+                    <div>
+                        <div class="audio-title">Dying Light Soundtrack</div>
+                        <div class="audio-artist">Pawel Blaszczak</div>
+                    </div>
+                </div>
+                <div class="audio-controls">
+                    <button class="audio-prev">⏮</button>
+                    <button class="audio-play">▶</button>
+                    <button class="audio-next">⏭</button>
+                    <div class="audio-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="audio-time">1:42 / 3:24</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ползунок диапазона -->
+        <section class="ui-section">
+            <h2>Ползунок диапазона</h2>
+            <div class="dying-range-slider">
+                <label>Диапазон времени суток</label>
+                <div class="range-container">
+                    <input type="range" min="7" max="21" value="12" class="range-min">
+                    <input type="range" min="7" max="21" value="18" class="range-max">
+                    <div class="range-values">
+                        <span>7:00</span>
+                        <span>21:00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Текстовые поля -->
+        <section class="ui-section">
+            <h2>Текстовые поля</h2>
+            <div class="dying-form">
+                <div class="form-group">
+                    <label>Имя выжившего</label>
+                    <input type="text" class="dying-input" placeholder="Кайл Крейн">
+                </div>
+                <div class="form-group">
+                    <label>Пароль GRE</label>
+                    <input type="password" class="dying-input" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label>Код доступа</label>
+                    <input type="text" class="dying-input masked" placeholder="XX-XXX-XX" data-mask="XX-XXX-XX">
+                </div>
+            </div>
+        </section>
+
+        <!-- Ссылки -->
+        <section class="ui-section">
+            <h2>Ссылки</h2>
+            <div class="dying-links">
+                <a href="https://dyinglightgame.com" class="dying-link" target="_blank">Официальный сайт</a>
+                <a href="#survival-guide" class="dying-link">Руководство по выживанию</a>
+            </div>
+        </section>
+
+        <!-- Вкладки -->
+        <section class="ui-section">
+            <h2>Вкладки</h2>
+            <div class="dying-tabs">
+                <div class="tabs-header">
+                    <button class="tab-btn active" data-tab="tab1">Инвентарь</button>
+                    <button class="tab-btn" data-tab="tab2">Карта</button>
+                    <button class="tab-btn" data-tab="tab3">Навыки</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-pane active" id="tab1">
+                        <p>Содержимое вашего рюкзака...</p>
+                    </div>
+                    <div class="tab-pane" id="tab2">
+                        <p>Карта карантинной зоны...</p>
+                    </div>
+                    <div class="tab-pane" id="tab3">
+                        <p>Доступные навыки паркура...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Аудио элементы -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="buttonHoverSound">
+        <source src="https://www.soundjay.com/buttons/sounds/button-09.mp3" type="audio/mpeg">
+    </audio>
+    
+    <audio id="buttonClickSound">
+        <source src="https://www.soundjay.com/buttons/sounds/button-10.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
